@@ -30,12 +30,12 @@ class Solution {
             }
         }
 
-        while(first!=null){
+        if(first!=null){
             curr.next = first;
             curr = curr.next;
             first = first.next;
         }
-        while(second!=null){
+        else{
             curr.next = second;
             curr = curr.next;
             second = second.next;
