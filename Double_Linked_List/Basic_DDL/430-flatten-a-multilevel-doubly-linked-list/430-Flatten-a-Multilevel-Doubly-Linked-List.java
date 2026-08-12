@@ -16,10 +16,11 @@ class Solution {
         while(curr!=null){
             if(curr.child!=null){
                 Node next = curr.next;
-                Node child = flatten(curr.child);
+                Node child = curr.child;
 
                 curr.next = child;
                 child.prev = curr;
+                curr.child = null;
 
                 Node tail = child;
                 while(tail.next!=null){
@@ -30,7 +31,7 @@ class Solution {
                 if(next!=null){
                     next.prev = tail;
                 }
-                curr.child = null;
+
             }
             curr = curr.next;
         }
